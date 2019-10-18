@@ -17,10 +17,18 @@
 @import "bootstrap";
 
 body {
-	background-color:grey;
+	font-family: 'Open Sans', sans-serif;
 }
 
 /* Header */
+.header{
+	background: #FFFFFF;
+	a {
+    color: #063346;
+    position: relative;
+    padding: 10px;
+	}
+}
 .header-alert{
 	border-bottom: 2px solid #ccc;
   background: #eee;
@@ -28,3 +36,35 @@ body {
   font-size: 12px;
   padding: 5px;
 }
+.company-logo {
+	img {
+		height: 53px;
+	}
+	p{
+		color: blue;
+		span{
+			color: red;
+		}
+	}
+}
+.secondary-header {
+	background: #063346;
+    color: #fff;
+    padding: 10px 0;
+}
+@media (min-width: 1200px){
+	.secondary-header h3 {
+	    font-size: 24px;
+	}
+}
+@media (min-width: 992px){
+	.secondary-header h3 {
+	    font-size: 20px;
+	}
+}
+@media (min-width: 768px){
+	.secondary-header h3 {
+	    font-size: 20px;
+	}
+}
+/**/
