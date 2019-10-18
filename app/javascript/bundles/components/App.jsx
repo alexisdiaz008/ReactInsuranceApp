@@ -24,22 +24,43 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <h3>
-          Hello, {this.state.name}!
-        </h3>
-        <hr />
-        <form >
-          <label htmlFor="name">
-            Say hello to:
-          </label>
-          <input
-            id="name"
-            type="text"
-            value={this.state.name}
-            onChange={(e) => this.updateName(e.target.value)}
-          />
-        </form>
+      <div>
+      <header>
+        <div className="header-alert text-center">
+          ObamaCare-Enroll.org is part of a privately owned agency and is not affiliated, operated, or endorsed by any government agency.
+        </div>
+        <div className="container">
+          <div className="header row">
+            Individuals & Families 
+          </div>
+        </div>
+        <div className="container">
+          <div className="secondary-header row">
+            bottom of the header
+          </div>
+        </div>
+      </header>
+
+
+
+        <div className="container">
+          <h3>
+            Hello, {this.state.name}!
+          </h3>
+          <hr />
+          <form >
+            <label htmlFor="name">
+              Say hello to:
+            </label>
+            <input
+              id="name"
+              type="text"
+              value={this.state.name}
+              onChange={(e) => this.updateName(e.target.value)}
+            />
+          </form>
+        </div>
+
       </div>
     );
   }
