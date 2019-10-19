@@ -34,7 +34,7 @@ export default class App extends React.Component {
           <div className="container header">
             <div className="row">
               <div className="company-logo col-md-4">
-                <p><img src={Logo} />Healthcare <span>Logo</span></p>
+                <p><img src={Logo} />Healthcare <span>Insurance</span></p>
               </div>
               <div className="col-md-8">
                 <ul className="nav mt-3">
@@ -55,6 +55,9 @@ export default class App extends React.Component {
           </div>
         </header>
 
+        <div className="landing-page-background">
+        </div>
+
 
 
         <div className="container">
@@ -74,6 +77,10 @@ export default class App extends React.Component {
             />
           </form>
         </div>
+
+        <footer className="container-fluid">
+            Healthcare-insurance.org is part of a privately owned agency and is not affiliated, operated, or endorsed by any government agency.
+        </footer>
 
       </div>
     );
