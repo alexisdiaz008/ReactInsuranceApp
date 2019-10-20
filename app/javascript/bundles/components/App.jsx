@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 // import ReactDOM from 'react-dom'
 import Logo from 'images/health-insurance-icon-png.png'
-import Background from 'images/healthy_family_outside.jpg'
 
 export default class App extends React.Component {
   
