@@ -17,7 +17,18 @@ export default class App extends React.Component {
     super(props);
     // How to set initial state in ES6 class syntax
     // https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class
-    this.state = { name: this.props.name };
+    this.state = { 
+        name: this.props.name,
+        zipCode: "",
+        firstName: "",
+        lastName: "",
+        phone:"",
+        email:"",
+        gender: "",
+        dob: "",
+        householdSize:"",
+        householdIncome:""
+    };
   }
 
   updateName = (name) => {
@@ -55,7 +66,99 @@ export default class App extends React.Component {
           </div>
         </header>
 
-        <div className="landing-page-background">
+
+
+        <div className="container-fluid landing-page-background">
+          <div className="container applicant-form-container">
+            <h2 className="container text-center">Compare health insurance plans</h2>
+            <form>
+              <input
+                className="form-group offset-md-4 col-md-3"
+                name="zipCode" 
+                value={this.state.zipCode} 
+                onChange={this.handleChange} 
+                placeholder="Zip Code" 
+              />
+              <br />
+              <input
+                className="form-group offset-md-4 col-md-3"
+                name="firstName" 
+                value={this.state.firstName} 
+                onChange={this.handleChange} 
+                placeholder="First Name" 
+              />
+              <br />
+              <input
+                className="form-group offset-md-4 col-md-3"
+                name="lastName" 
+                value={this.state.lastName}
+                onChange={this.handleChange} 
+                placeholder="Last Name" 
+              />
+              <br />
+              <input
+                className="form-group offset-md-4 col-md-3"
+                name="phone" 
+                value={this.state.phone}
+                onChange={this.handleChange} 
+                placeholder="Phone" 
+              />
+              <br />
+              <input
+                className="form-group offset-md-4 col-md-3"
+                name="email" 
+                value={this.state.email}
+                onChange={this.handleChange} 
+                placeholder="Email" 
+              />
+              <br />
+
+              <select
+                className="form-group offset-md-4 col-md-3"
+                value={this.state.gender} 
+                name="destination" 
+                onChange={this.handleChange}
+              >
+                <option value="">Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <br />
+              <select
+                className="form-group offset-md-4 col-1"
+                value={this.state.month} 
+                name="destination" 
+                onChange={this.handleChange}
+              >
+                <option value="">Month</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <select
+                className="form-group col-1"
+                value={this.state.day} 
+                name="destination" 
+                onChange={this.handleChange}
+              >
+                <option value="">Day</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <select
+                className="form-group col-1"
+                value={this.state.year} 
+                name="destination" 
+                onChange={this.handleChange}
+              >
+                <option value="">Year</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+
+              <br />
+              <button className="applicant-submit offset-md-6">Submit</button>
+            </form>
+          </div>
         </div>
 
 
@@ -78,7 +181,7 @@ export default class App extends React.Component {
           </form>
         </div>
 
-        <footer className="container-fluid">
+        <footer className="container-fluid text-center">
             Healthcare-insurance.org is part of a privately owned agency and is not affiliated, operated, or endorsed by any government agency.
         </footer>
 
