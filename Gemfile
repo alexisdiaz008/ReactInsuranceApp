@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
-
 gem 'jquery-rails'
 # dependency for bootstrap
 gem 'bootstrap', '~> 4.3.1'
@@ -10,7 +8,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'react_on_rails', '11.1.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
-# Use pg as the database for Active Record
+# Use pgge as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
