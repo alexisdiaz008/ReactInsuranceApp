@@ -37,6 +37,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
+      
         <header>
           <div className="header-alert text-center">
             Healthcare-insurance.org is part of a privately owned agency and is not affiliated, operated, or endorsed by any government agency.
