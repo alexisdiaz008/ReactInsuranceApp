@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 // import ReactDOM from 'react-dom'
-import Logo from 'images/health-insurance-icon-png.png'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default class App extends React.Component {
   
@@ -23,11 +24,26 @@ export default class App extends React.Component {
         lastName: "",
         phone:"",
         email:"",
-        gender: "",
+        gender: this.props.gender,
         dob: "",
         householdSize:"",
         householdIncome:""
-    };
+    }
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(event) {
+    const {name, value, type, checked} = event.target
+    if (type == checked) {
+      this.setState({
+        [name]: !checked
+      })
+    } else {
+      this.setState({
+        [name]: value
+      })
+      console.log('caught')
+    }
   }
 
   updateName = (name) => {
@@ -36,37 +52,10 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
       
-        <header>
-          <div className="header-alert text-center">
-            Healthcare-insurance.org is part of a privately owned agency and is not affiliated, operated, or endorsed by any government agency.
-          </div>
-          <div className="container header">
-            <div className="row">
-              <div className="company-logo col-md-4">
-                <p><img src={Logo} />Healthcare <span>Insurance</span></p>
-              </div>
-              <div className="col-md-8">
-                <ul className="nav mt-3">
-                  <li><a href="/">Individuals & Families</a></li>
-                  <li><a href="/">Small Business</a></li>
-                  <li><a href="/">Pre-Existing</a></li>
-                  <li><a href="/">FAQ</a></li>
-                  <li><a href="/">Contact Us</a></li>
-                  <li><a href="/">Get Quote</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="container-fluid secondary-header">
-            <div className="text-center">
-              <h3>Open Enrollment is NOW! Don't wait, Get a <strong>Qualified Health Plan Today!</strong></h3>
-            </div>
-          </div>
-        </header>
+      <div>
 
-
+        <Header />
 
         <div className="container-fluid landing-page-background">
           <div className="container applicant-form-container">
@@ -74,6 +63,7 @@ export default class App extends React.Component {
             <form>
               <input
                 className="form-group offset-md-4 col-md-3"
+                type="text"
                 name="zipCode" 
                 value={this.state.zipCode} 
                 onChange={this.handleChange} 
@@ -82,6 +72,7 @@ export default class App extends React.Component {
               <br />
               <input
                 className="form-group offset-md-4 col-md-3"
+                type="text"
                 name="firstName" 
                 value={this.state.firstName} 
                 onChange={this.handleChange} 
@@ -90,6 +81,7 @@ export default class App extends React.Component {
               <br />
               <input
                 className="form-group offset-md-4 col-md-3"
+                type="text"
                 name="lastName" 
                 value={this.state.lastName}
                 onChange={this.handleChange} 
@@ -98,6 +90,7 @@ export default class App extends React.Component {
               <br />
               <input
                 className="form-group offset-md-4 col-md-3"
+                type="text"
                 name="phone" 
                 value={this.state.phone}
                 onChange={this.handleChange} 
@@ -106,6 +99,7 @@ export default class App extends React.Component {
               <br />
               <input
                 className="form-group offset-md-4 col-md-3"
+                type="text"
                 name="email" 
                 value={this.state.email}
                 onChange={this.handleChange} 
@@ -115,6 +109,7 @@ export default class App extends React.Component {
 
               <select
                 className="form-group offset-md-4 col-md-3"
+                type="select"
                 value={this.state.gender} 
                 name="destination" 
                 onChange={this.handleChange}
@@ -126,6 +121,7 @@ export default class App extends React.Component {
               <br />
               <select
                 className="form-group offset-md-4 col-1"
+                type="select"
                 value={this.state.month} 
                 name="destination" 
                 onChange={this.handleChange}
@@ -136,6 +132,7 @@ export default class App extends React.Component {
               </select>
               <select
                 className="form-group col-1"
+                type="select"
                 value={this.state.day} 
                 name="destination" 
                 onChange={this.handleChange}
@@ -146,6 +143,7 @@ export default class App extends React.Component {
               </select>
               <select
                 className="form-group col-1"
+                type="select"
                 value={this.state.year} 
                 name="destination" 
                 onChange={this.handleChange}
@@ -181,9 +179,8 @@ export default class App extends React.Component {
           </form>
         </div>
 
-        <footer className="container-fluid text-center">
-            Healthcare-insurance.org is part of a privately owned agency and is not affiliated, operated, or endorsed by any government agency.
-        </footer>
+        <Footer />
+        
 
       </div>
     );
