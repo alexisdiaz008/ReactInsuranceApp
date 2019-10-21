@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+ruby '2.6.5'
+
 gem 'jquery-rails'
 # dependency for bootstrap
 gem 'bootstrap', '~> 4.3.1'
