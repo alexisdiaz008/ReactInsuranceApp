@@ -1,0 +1,114 @@
+// Variables
+$color-grey: #55595c;
+$color-grey-light: #f5f5f5e3;
+$color-primary: #34985c;
+$slate-grey: #bec0c1;
+$input-color: #888787;
+$form-color: #34985c;
+$radius: 0px;
+
+// Function
+@function remy($value, $base: 16px) {
+  @return ($value / $base) * 1rem;
+}
+
+// Mixins
+@mixin transition($prop: all, $duration: .25s, $timing: cubic-bezier(.4,0,1,1)) {
+  transition: $prop $duration $timing;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  font: 100% 'Roboto', arial, sans-serif;
+  background: $color-grey-light;
+}
+
+.applicant-form {
+  padding: remy(32px);
+  max-width: remy(380px);
+  background-color: $color-grey-light;
+  border-radius: $radius;
+  box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+}
+
+.form-group {
+  padding: 0;
+  border: 0;
+  
+  & + & {
+    margin-top: 1rem;
+  }
+}
+
+label {
+  font-size: .75rem;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  color: $input-color;
+}
+
+input,
+textarea {
+  display: block;
+  padding: .5rem .75rem;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #55595c;
+  background-color: transparent;
+  background-image: none;
+  background-clip: padding-box;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid $input-color;
+  border-left: 0;
+  border-radius: $radius;
+  @include transition;
+  
+  &:focus {
+    outline: 0;
+    border-bottom-color: $color-primary;
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+.default-button {
+  display: inline-block;
+  padding: .75rem 1rem;
+  margin-top: 1.618rem;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  vertical-align: middle;
+  white-space: nowrap;
+  background-color: $slate-grey;
+  border: 1px solid transparent;
+  box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+  cursor: pointer;
+  user-select: none;
+  @include transition;
+  
+  &:focus,
+  &:hover {
+    background-color: lighten($color-primary, 13%);
+    box-shadow: 0 18px 35px rgba(50,50,93,.1),0 8px 15px rgba(0,0,0,.07);
+  }
+  
+  &:focus {
+    outline: 0;
+  }
+}

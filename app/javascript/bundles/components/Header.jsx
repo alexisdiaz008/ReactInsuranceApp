@@ -36,8 +36,8 @@ export default class Header extends React.Component {
               </div>
             </div>
           </div>
-          <div className="container-fluid secondary-header">
-            <div className="text-center">
+          <div className="container-fluid secondary-header py-3">
+            <div className="text-center pt-2">
               <h3>Open Enrollment is NOW! Don't wait, Get a <strong>Qualified Health Plan Today!</strong></h3>
             </div>
           </div>
