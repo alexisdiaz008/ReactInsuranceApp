@@ -17,23 +17,25 @@ export default class App extends React.Component {
 
   render() {
     return (
-      
-      <div>
+      <div className="wrapper">
         <Header />
-        <div className="container-fluid landing-page-background">
-          <div className="row">
-            <div className="col-8">
-              <h2>
-                
-              </h2>
-            </div>
-            <div className="col-4 py-3">
-              <Form />
-            </div>
+        <div className="container-fluid section parallax landing-page-background">
+          <div className="col-8">
+            <h1 className="text-left">
+              Open Enrollment is NOW!
+              <br />
+              Don't wait, Get a <strong>Qualified Health Plan Today!</strong>
+            </h1>
           </div>
+          <div className="col-4 py-3">
+            <Form />
+          </div>
+        </div>
+        <div className="container-fluid section static">
+          <h1>Boring</h1>
         </div>
         <Footer />
       </div>
-    );
+    )
   }
 }

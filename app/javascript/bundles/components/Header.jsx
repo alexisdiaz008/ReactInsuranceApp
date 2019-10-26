@@ -8,7 +8,7 @@ export default class Header extends React.Component {
     super(props);
     // How to set initial state in ES6 class syntax
     // https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class
-    this.state = { }
+    this.state = {}
   }
 
 

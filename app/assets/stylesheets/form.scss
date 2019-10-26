@@ -50,11 +50,11 @@ body {
   }
 }
 
-label {
-  font-size: .75rem;
+.applicant-form label.h6 {
   text-transform: uppercase;
   touch-action: manipulation;
   color: $input-color;
+  text-shadow: none;
 }
 
 input,
