@@ -13,8 +13,13 @@ export default class Footer extends React.Component {
 
   render() {
     return (
-			<footer className="container-fluid text-center">
-			  Healthcare-insurance.org is part of a privately owned agency and is not affiliated, operated, or endorsed by any government agency.
+      <footer>
+        <div className="footer-alert text-center">
+          Healthcare-insurance.org is part of a privately owned agency and is not affiliated, operated, or endorsed by any government agency.
+        </div>
+  			<div className="container-fluid text-center">
+  			  Healthcare-insurance.org is part of a privately owned agency and is not affiliated, operated, or endorsed by any government agency.
+        </div>
 			</footer>
     )
   }

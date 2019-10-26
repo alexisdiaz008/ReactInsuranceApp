@@ -96,56 +96,59 @@ export default class Form extends React.Component {
       console.log('caught')
     }
   }
-  defaultTextInputsHtml() {
-    const textInputs = ['Zip Code','First Name','Last Name','Phone','Email']
+  textInputsFor(textInputs) {
     var textInputsHtml = textInputs.map((text) => {
-        return (
-          <div className="row mt-3">
-            <Label 
-              className='col-md-12 h6 px-0'
-              label={text}
-            />
-            <Input
-              required='true'
-              type='text'
-              placeholder={text}
-            />
-          </div>
-        )
-      })
+      return (
+        <div className="mt-3">
+          <Label 
+            className='col-md-12 h6 px-0'
+            label={text}
+          />
+          <Input
+            required='true'
+            type='text'
+            placeholder={text}
+          />
+        </div>
+      )
+    })
     return textInputsHtml
   }
+  radioButtonsFor(radioButtons) {
+    const key = Object.keys(radioButtons)[0]
+    var radioButtonsArray = radioButtons[key]['options'].map(key => {
+      return (
+        <div className="col-6 text-center">
+          <Label
+            className='h6'
+            label={key.charAt(0).toUpperCase() + key.slice(1)}
+          />
+          <Input
+            name={name}
+            required='true'
+            type='radio'
+            value={key}
+          />
+        </div>
+      )
+    })
+    return (
+      <div className="row my-3">
+        {radioButtonsArray}
+      </div>
+    )
+  }
   render() {
-    var defaultTextInputs = this.defaultTextInputsHtml()
+    const textInputsArray = ['Zip Code','First Name','Last Name','Phone','Email']
+    const radioButtonObject = { gender: { options: ['male','female'] } }
     return (
       <form className="applicant-form" method='' action=''>
-        {defaultTextInputs}
-        <div className="row my-3">
-          <div className="col-6 text-center">
-            <Label
-              className='h6'
-              label='Male'
-            />
-            <Input
-              name='gender'
-              required='true'
-              type='radio'
-              value='male'
-            />
-          </div>
-          <div className="col-6 text-center">
-            <Label
-              className='h6'
-              label='Female'
-            />
-            <Input
-              name='gender'
-              required='true'
-              type='radio'
-              value='female'
-            />
-          </div>
-        </div>
+        <h5 className="form-header text-left mb-3">
+          Find Affordable Health Care Plans
+        </h5>
+        {this.textInputsFor(textInputsArray)}
+        {this.radioButtonsFor(radioButtonObject)}
+        
         <div className="row my-3">
           <div className="col-4">
             <Label

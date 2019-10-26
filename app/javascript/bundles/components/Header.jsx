@@ -14,35 +14,21 @@ export default class Header extends React.Component {
 
   render() {
     return (
-
-        <header>
-          <div className="header-alert text-center">
-            Healthcare-insurance.org is part of a privately owned agency and is not affiliated, operated, or endorsed by any government agency.
+      <header>
+        <div className="container-fluid header">
+          <div className="company-logo col-md-4">
+            <p><img src={Logo} /></p>
           </div>
-          <div className="container header">
-            <div className="row">
-              <div className="company-logo col-md-4">
-                <p><img src={Logo} />Healthcare <span>Insurance</span></p>
-              </div>
-              <div className="col-md-8">
-                <ul className="nav mt-3">
-                  <li><a href="/">Individuals & Families</a></li>
-                  <li><a href="/">Small Business</a></li>
-                  <li><a href="/">Pre-Existing</a></li>
-                  <li><a href="/">FAQ</a></li>
-                  <li><a href="/">Contact Us</a></li>
-                  <li><a href="/">Get Quote</a></li>
-                </ul>
-              </div>
-            </div>
+          <div className="col-md-8 text-center">
+            <a href="/">Individuals & Families</a>
+            <a href="/">Small Business</a>
+            <a href="/">Pre-Existing</a>
+            <a href="/">FAQ</a>
+            <a href="/">Contact Us</a>
+            <a href="/">Get Quote</a>
           </div>
-          <div className="container-fluid secondary-header py-3">
-            <div className="text-center pt-2">
-              <h3>Open Enrollment is NOW! Don't wait, Get a <strong>Qualified Health Plan Today!</strong></h3>
-            </div>
-          </div>
-        </header>
-
+        </div>
+      </header>
     )
   }
 }

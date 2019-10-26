@@ -84,7 +84,11 @@ textarea {
 textarea {
   resize: vertical;
 }
-
+.form-header {
+  color: $color-grey;
+  text-shadow: none;
+  border-bottom: 2px solid $slate-grey;
+}
 .default-button {
   display: inline-block;
   padding: .75rem 1rem;
@@ -96,7 +100,6 @@ textarea {
   vertical-align: middle;
   white-space: nowrap;
   background-color: $slate-grey;
-  border: 1px solid transparent;
   box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
   cursor: pointer;
   user-select: none;
@@ -112,3 +115,4 @@ textarea {
     outline: 0;
   }
 }
+

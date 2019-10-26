@@ -19,34 +19,26 @@
 /* Header */
 .header{
 	background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 14vh;
 	a {
-    color: #063346;
+    color: #55595c;
     position: relative;
     padding: 10px;
+    height: 4rem;
+    text-decoration:none;
 	}
-}
-.header-alert{
-	border-bottom: 2px solid #ccc;
-  background: #eee;
-  line-height: 18px;
-  font-size: 12px;
-  padding: 5px;
 }
 .company-logo {
+	text-align: center;
 	img {
-		height: 53px;
+		height: 4rem;
 	}
 	p{
-		color: blue;
-		span{
-			color: red;
-		}
+		margin: 0;
 	}
-}
-.secondary-header {
-	background: #063346;
-    color: #fff;
-    padding: 10px 0;
 }
 @media (min-width: 1200px){
 	.secondary-header h3 {
@@ -65,26 +57,6 @@
 }
 /**/
 
-/* Body */
-.applicant-form-container{
-	background: rgba(0, 48, 70, 0.7);
-  border: 1px solid rgb(0, 25, 37);
-  padding: 25px;
-  color: #fff;
-  box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, .1);
-	margin-top:3rem;
-	margin-bottom:3rem;
-}
-.applicant-submit {
-	height: 56px !important;
-	border: 1px solid #c6ccd2;
-	border-radius: 0px;
-	background-color: white;
-	background-color: #5cb85c;
-	border-color: #4cae4c;
-	padding: 1rem 2rem;
-}
-/**/
 
 /*Footer*/
 footer{
@@ -92,7 +64,15 @@ footer{
 	color: white;
   /*position: fixed;*/
   bottom: 0;
-  padding: 10px;
+  padding-bottom:5px;
   font-size: 12px;
+}
+.footer-alert{
+	color: grey;
+	border-top: 2px solid #ccc;
+  background: #eee;
+  line-height: 18px;
+  font-size: 12px;
+  padding: 5px;
 }
 /**/

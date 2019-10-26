@@ -22,11 +22,11 @@ export default class App extends React.Component {
         <div className="container-fluid section parallax landing-page-background">
           <div className="col-8">
             <h1 className="text-left">
-              Find Affordable Health Care Plans
-              <br />
               Open Enrollment is NOW!
               <br />
-              Don't wait, Get a <strong>Qualified Health Plan Today!</strong>
+              Don't wait,
+              <br />
+              Get a <strong>Qualified Health Plan Today!</strong>
             </h1>
           </div>
           <div className="col-4 py-3">
