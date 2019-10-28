@@ -16,10 +16,10 @@ class Input extends React.Component {
           min={this.props.min || null}
           name={this.props.name || null}
           placeholder={this.props.placeholder || null}
-          required={this.props.required || null}
           step={this.props.step || null}
           type={this.props.type || 'text'}
           value={this.props.value || ''}
+          onChange={this.props.onChange || null}
         />
     );
   }
@@ -76,7 +76,7 @@ export default class Form extends React.Component {
         lastName: "",
         phone:"",
         email:"",
-        gender: this.props.gender,
+        gender: "",
         dob: "",
         householdSize:"",
         householdIncome:""
@@ -98,6 +98,7 @@ export default class Form extends React.Component {
   }
   textInputsFor(textInputs) {
     var textInputsHtml = textInputs.map((text) => {
+      var name = (text.charAt(0).toLowerCase() + text.slice(1)).replace(' ', '')
       return (
         <div className="mt-3">
           <Label 
@@ -105,9 +106,11 @@ export default class Form extends React.Component {
             label={text}
           />
           <Input
-            required='true'
             type='text'
+            name={name}
             placeholder={text}
+            value={this.state[name]}
+            onChange={this.handleChange}
           />
         </div>
       )
@@ -116,6 +119,7 @@ export default class Form extends React.Component {
   }
   radioButtonsFor(radioButtons) {
     const key = Object.keys(radioButtons)[0]
+    const name = key
     var radioButtonsArray = radioButtons[key]['options'].map(key => {
       return (
         <div className="col-6 text-center">
@@ -125,7 +129,6 @@ export default class Form extends React.Component {
           />
           <Input
             name={name}
-            required='true'
             type='radio'
             value={key}
           />
@@ -148,7 +151,6 @@ export default class Form extends React.Component {
         </h5>
         {this.textInputsFor(textInputsArray)}
         {this.radioButtonsFor(radioButtonObject)}
-        
         <div className="row my-3">
           <div className="col-4">
             <Label
@@ -158,7 +160,6 @@ export default class Form extends React.Component {
             <Select
               className='col-12'
               options='Dec, Jan'
-              required='true'
             />
           </div>
           <div className="col-4">
@@ -169,7 +170,6 @@ export default class Form extends React.Component {
             <Select
               className='col-12'
               options='Jan'
-              required='true'
             />
           </div>
           <div className="col-4">
@@ -180,7 +180,6 @@ export default class Form extends React.Component {
             <Select
               className='col-12'
               options='Dec, Jan'
-              required='true'
             />
           </div>
         </div>
