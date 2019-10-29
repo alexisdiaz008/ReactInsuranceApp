@@ -93,7 +93,6 @@ export default class Form extends React.Component {
       this.setState({
         [name]: value
       })
-      console.log('caught')
     }
   }
   textInputsFor(textInputs) {
@@ -145,44 +144,11 @@ export default class Form extends React.Component {
     const textInputsArray = ['Zip Code','First Name','Last Name','Phone','Email']
     const radioButtonObject = { gender: { options: ['male','female'] } }
     return (
-      <form className="applicant-form" method='' action=''>
+      <form className="applicant-form" method='post' action='/app_create'>
         <h5 className="form-header text-left mb-3">
           Find Affordable Health Care Plans
         </h5>
         {this.textInputsFor(textInputsArray)}
-        {this.radioButtonsFor(radioButtonObject)}
-        <div className="row my-3">
-          <div className="col-4">
-            <Label
-              className='col-12 h6'
-              label='Day'
-            />
-            <Select
-              className='col-12'
-              options='Dec, Jan'
-            />
-          </div>
-          <div className="col-4">
-            <Label
-              className='col-12 h6'
-              label='Month'
-            />
-            <Select
-              className='col-12'
-              options='Jan'
-            />
-          </div>
-          <div className="col-4">
-            <Label
-              className='col-12 h6'
-              label='Year'
-            />
-            <Select
-              className='col-12'
-              options='Dec, Jan'
-            />
-          </div>
-        </div>
         <Button
           className="default-button col-12"
           type='submit'

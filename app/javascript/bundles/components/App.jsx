@@ -21,7 +21,7 @@ export default class App extends React.Component {
         <Header />
         <div className="container-fluid section parallax landing-page-background">
           <div className="col-8">
-            <h1 className="text-left">
+            <h1 className="text-left px-3">
               Open Enrollment is NOW!
               <br />
               Don't wait,
@@ -33,7 +33,7 @@ export default class App extends React.Component {
             <Form />
           </div>
         </div>
-        <div className="container-fluid section static">
+        <div className="container-fluid section static-banner">
           <h3 className="text-center">Let us help you find the right affordable health care plan<br /> for you, and your family.</h3>
         </div>
         <Footer />
