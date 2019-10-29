@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 // import ReactDOM from 'react-dom'
-import Logo from 'images/health-insurance-icon-png.png'
+import Logo from 'images/health-insurance-icon.png'
 
 export default class Header extends React.Component {
 	  constructor(props) {
