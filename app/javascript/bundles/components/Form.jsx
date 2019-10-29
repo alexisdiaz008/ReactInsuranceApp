@@ -20,6 +20,7 @@ class Input extends React.Component {
           type={this.props.type || 'text'}
           value={this.props.value || ''}
           onChange={this.props.onChange || null}
+          required
         />
     );
   }

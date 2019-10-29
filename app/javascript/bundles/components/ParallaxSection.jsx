@@ -6,25 +6,26 @@ import FormBackground from 'images/stethascope.jpg'
 
 export default class ParallaxSection extends React.Component {
 
+	formBanner() {
+		return(
+			<h1 className="text-left form-banner-text">
+        Open Enrollment is NOW!
+        <br />
+        Don't wait, Get a 
+        <br />
+        <strong>Qualified Health Plan Today!</strong>
+      </h1>
+		)
+	}
+
   render() {
-  	let style = {
-					  		backgroundImage:'url('+FormBackground+')',
-						    backgroundPosition:"center",
-							  backgroundSize:"cover"
-							};
     return (
     	<div> 
-	      <div className="container-fluid section parallax landing-page-background" style={style}>
-	        <div className="col-8">
-	          <h1 className="text-left px-32 form-banner-text">
-	            Open Enrollment is NOW!
-	            <br />
-	            Don't wait, Get a 
-	            <br />
-	            <strong>Qualified Health Plan Today!</strong>
-	          </h1>
+	      <div className="container-fluid section parallax landing-page-background" >
+	        <div className="col-7 d-sm-none d-lg-block">
+	          {this.formBanner()}
 	        </div>
-	        <div className="col-4 py-3 form-container">
+	        <div className="col-lg-4 col-sm-7 form-container">
 	          <Form />
 	        </div>
 	      </div>
