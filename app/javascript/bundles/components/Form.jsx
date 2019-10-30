@@ -5,23 +5,7 @@ import React from 'react';
 function Label(props) {
   return <label className={props.className || ''}>{props.label}</label>
 }
-// Create component for input
-class Input extends React.Component {
-  render() {
-    return (
-        <input
-          className={this.props.className || null}
-          id={this.props.id || null}
-          max={this.props.max || null}
-          min={this.props.min || null}
-          name={this.props.name || null}
-          placeholder={this.props.placeholder || null}
-          step={this.props.step || null}
-          type={this.props.type || 'text'}
-        />
-    );
-  }
-}
+
 // Create component for button
 class Button extends React.Component {
   render() {
@@ -61,6 +45,25 @@ class Select extends React.Component {
     );
   }
 };
+// Create component for input
+class Input extends React.Component {
+  render() {
+    return (
+        <input
+          className={this.props.className || null}
+          id={this.props.id || null}
+          max={this.props.max || null}
+          min={this.props.min || null}
+          name={this.props.name || null}
+          placeholder={this.props.placeholder || null}
+          step={this.props.step || null}
+          type={this.props.type || 'text'}
+          value={this.props.value || ''}
+          onChange={this.props.onChange || null}
+        />
+    );
+  }
+}
 // Create component for form
 export default class Form extends React.Component {
   constructor(props) {
@@ -68,6 +71,7 @@ export default class Form extends React.Component {
     // How to set initial state in ES6 class syntax
     // https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class
     this.state = { 
+        loading:false,
         name: this.props.name,
         zipCode: "",
         firstName: "",
@@ -76,10 +80,32 @@ export default class Form extends React.Component {
         email:""
     }
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(event) {
+    const {name, value, type, checked} = event.target
+    if (type == checked) {
+      this.setState({
+        [name]: !checked
+      })
+    } else {
+      this.setState({
+        [name]: value
+      })
+    }
   }
 
   handleSubmit(event) {
-    console.log("hello")
+    event.preventDefault()
+    const data = new FormData(event.target)
+    fetch('/app_create', {
+      method: 'POST',
+      body: data,
+    })
+    this.setState({
+      'loading':!this.state['loading']
+    })
   }
   textInputsFor(textInputs) {
     var textInputsHtml = textInputs.map((text) => {
@@ -127,15 +153,13 @@ export default class Form extends React.Component {
     )
   }
   render() {
-    console.log('rendering')
     const textInputsArray = ['Zip Code','First Name','Last Name','Phone','Email']
-    const radioButtonObject = { gender: { options: ['male','female'] } }
     return (
       <form 
         className="applicant-form" 
         method='post' 
-        action='/app_create' 
-        onSubmit={this.handleSubmit()}
+        action='/' 
+        onSubmit={this.handleSubmit}
       >
         <h5 className="form-header text-left mb-3">
           Find Affordable Health Care Plans

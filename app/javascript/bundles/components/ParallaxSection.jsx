@@ -6,6 +6,13 @@ import FormBackground from 'images/stethascope.jpg'
 
 export default class ParallaxSection extends React.Component {
 
+	constructor(props){
+		super(props)
+		this.state = { 
+        loading:{this.props.loading || null},
+    }
+	}
+
 	formBanner() {
 		return(
 			<h1 className="text-left form-banner-text">
