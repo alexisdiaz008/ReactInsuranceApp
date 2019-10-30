@@ -5,6 +5,6 @@ class AppController < ApplicationController
   end
 
   def app_create
-  	p params
+  	p "~~~~~This is where the applicant create would happen!"
   end
 end

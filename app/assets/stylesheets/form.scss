@@ -50,7 +50,7 @@ body {
   color: white;
   vertical-align: middle;
   white-space: nowrap;
-  background-color: $slate-grey;
+  background-color: $color-primary;
   border:$color-grey-light solid 1px;
   box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
   cursor: pointer;
@@ -59,7 +59,7 @@ body {
   
   &:focus,
   &:hover {
-    background-color: lighten($color-primary, 13%);
+    background-color: lighten($slate-grey, 13%);
     box-shadow: 0 18px 35px rgba(50,50,93,.1),0 8px 15px rgba(0,0,0,.07);
   }
   
@@ -107,7 +107,14 @@ textarea {
   text-shadow: none;
   border-bottom: 2px solid $slate-grey;
 }
-
+@media (max-width: 992px) {
+  .form-header {
+    font-size: 2rem;
+  }
+  .applicant-form label.h6 {
+    font-size: 1.3rem; 
+  }
+}
 .form-banner-text {
   padding: 13%;
 }

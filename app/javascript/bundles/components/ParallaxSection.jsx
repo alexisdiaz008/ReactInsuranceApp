@@ -25,7 +25,7 @@ export default class ParallaxSection extends React.Component {
 	        <div className="col-7 d-sm-none d-lg-block">
 	          {this.formBanner()}
 	        </div>
-	        <div className="col-lg-4 col-sm-7 form-container">
+	        <div className="col-lg-4 col-sm-10 form-container">
 	          <Form />
 	        </div>
 	      </div>

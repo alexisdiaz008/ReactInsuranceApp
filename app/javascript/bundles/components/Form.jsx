@@ -18,9 +18,6 @@ class Input extends React.Component {
           placeholder={this.props.placeholder || null}
           step={this.props.step || null}
           type={this.props.type || 'text'}
-          value={this.props.value || ''}
-          onChange={this.props.onChange || null}
-          required
         />
     );
   }
@@ -76,25 +73,13 @@ export default class Form extends React.Component {
         firstName: "",
         lastName: "",
         phone:"",
-        email:"",
-        gender: "",
-        dob: "",
-        householdSize:"",
-        householdIncome:""
+        email:""
     }
-    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
-  handleChange(event) {
-    const {name, value, type, checked} = event.target
-    if (type == checked) {
-      this.setState({
-        [name]: !checked
-      })
-    } else {
-      this.setState({
-        [name]: value
-      })
-    }
+
+  handleSubmit(event) {
+    console.log("hello")
   }
   textInputsFor(textInputs) {
     var textInputsHtml = textInputs.map((text) => {
@@ -142,10 +127,16 @@ export default class Form extends React.Component {
     )
   }
   render() {
+    console.log('rendering')
     const textInputsArray = ['Zip Code','First Name','Last Name','Phone','Email']
     const radioButtonObject = { gender: { options: ['male','female'] } }
     return (
-      <form className="applicant-form" method='post' action='/app_create'>
+      <form 
+        className="applicant-form" 
+        method='post' 
+        action='/app_create' 
+        onSubmit={this.handleSubmit()}
+      >
         <h5 className="form-header text-left mb-3">
           Find Affordable Health Care Plans
         </h5>
