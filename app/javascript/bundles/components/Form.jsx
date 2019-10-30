@@ -103,9 +103,7 @@ export default class Form extends React.Component {
       method: 'POST',
       body: data,
     })
-    this.setState({
-      'loading':!this.state['loading']
-    })
+    this.props.setLoading()
   }
   textInputsFor(textInputs) {
     var textInputsHtml = textInputs.map((text) => {
@@ -118,6 +116,7 @@ export default class Form extends React.Component {
           />
           <Input
             type='text'
+            className='px-0'
             name={name}
             placeholder={text}
             value={this.state[name]}

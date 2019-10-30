@@ -20,12 +20,7 @@ export default class Header extends React.Component {
             <p><img src={Logo} /></p>
           </div>
           <div className="col-md-8 text-center">
-            <a href="/">Individuals & Families</a>
-            <a href="/">Small Business</a>
-            <a href="/">Pre-Existing</a>
-            <a href="/">FAQ</a>
             <a href="/">Contact Us</a>
-            <a href="/">Get Quote</a>
           </div>
         </div>
       </header>
