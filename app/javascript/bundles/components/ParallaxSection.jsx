@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 // import ReactDOM from 'react-dom'
 import Form from '../components/Form'
+import Loader from '../components/LoadAnimation'
 import FormBackground from 'images/stethascope.jpg'
 
 export default class ParallaxSection extends React.Component {
@@ -43,10 +44,9 @@ export default class ParallaxSection extends React.Component {
 		)
 	}
   render() {
-  	console.log(this.state)
     return (
     	<div> 
-	      {this.formSection}
+    		<Loader />
 	      <div className="container-fluid section static-banner">
 	        <h3 className="text-center">Let us help you find the right affordable health care plan<br /> for you, and your family.</h3>
 	      </div>

@@ -71,8 +71,6 @@ export default class Form extends React.Component {
     // How to set initial state in ES6 class syntax
     // https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class
     this.state = { 
-        loading:false,
-        name: this.props.name,
         zipCode: "",
         firstName: "",
         lastName: "",
@@ -82,7 +80,6 @@ export default class Form extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
-
   handleChange(event) {
     const {name, value, type, checked} = event.target
     if (type == checked) {

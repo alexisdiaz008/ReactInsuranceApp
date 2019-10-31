@@ -1,0 +1,35 @@
+#loadingContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+    visibility: visible;
+    opacity: 1;
+}
+
+#loadingLogo {
+    margin-bottom: 40px;            
+    min-width:200px;
+    min-height: 200px;
+}
+
+#loadingSpinner {
+    height:80px;
+    width: 80px;
+    min-width:80px;
+    min-height:80px;
+    transform-origin: 40px 40px 40px;
+    transition: .5s;
+    animation: spinnerAnimation 1.3s infinite cubic-bezier(.53,.21,.29,.67);
+}
+
+@keyframes spinnerAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
