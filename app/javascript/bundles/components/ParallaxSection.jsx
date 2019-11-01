@@ -44,10 +44,13 @@ export default class ParallaxSection extends React.Component {
       </div>
 		)
 	}
-	completedApplication() {
+	completedApplicationText() {
 		return (
 			<div className="container-fluid section parallax landing-page-background p-3" >
-				<h3 className="text-center p-3">Application Created!.</h3>
+				<div className="h1 text-center p-3">
+					Application Created!<br />
+					Thank you for applying!
+				</div>
 			</div>
 		)
 	}
@@ -61,7 +64,7 @@ export default class ParallaxSection extends React.Component {
       return (<Loader />)
 		}
 		if (this.state.loading == 'completed'){
-			return (this.completedApplication())
+			return (this.completedApplicationText())
 		} else {
 			return (this.defaultForm())
 		}
