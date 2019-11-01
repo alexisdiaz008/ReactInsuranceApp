@@ -11,6 +11,7 @@ export default class ParallaxSection extends React.Component {
 		super(props)
 		this.state = { 
       loading:false,
+      completed:false
     }
 	}
 	handleLoading() {
@@ -29,7 +30,7 @@ export default class ParallaxSection extends React.Component {
       </h1>
 		)
 	}
-	formSection(){
+	defaultForm(){
 		return(
 			<div className="container-fluid section parallax landing-page-background" >
         <div className="col-7 d-sm-none d-lg-block">
@@ -43,10 +44,32 @@ export default class ParallaxSection extends React.Component {
       </div>
 		)
 	}
+	completedApplication() {
+		return (
+			<div className="container-fluid section parallax landing-page-background p-3" >
+				<h3 className="text-center p-3">Application Created!.</h3>
+			</div>
+		)
+	}
+	formSection(){
+		if (this.state.loading == true)  {
+			setTimeout(() => {
+				this.setState({
+					loading: 'completed'
+				})
+	    }, 2500)
+      return (<Loader />)
+		}
+		if (this.state.loading == 'completed'){
+			return (this.completedApplication())
+		} else {
+			return (this.defaultForm())
+		}
+	}
   render() {
     return (
-    	<div> 
-    		<Loader />
+    	<div>
+	    	{this.formSection()}
 	      <div className="container-fluid section static-banner">
 	        <h3 className="text-center">Let us help you find the right affordable health care plan<br /> for you, and your family.</h3>
 	      </div>

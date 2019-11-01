@@ -1,12 +1,10 @@
-#loadingContainer {
+.centered-container {
     display: flex;
     flex-direction: column;
-    height: 100%;
     align-items: center;
     overflow: hidden;
     justify-content: center;
     visibility: visible;
-    opacity: 1;
 }
 
 #loadingLogo {
